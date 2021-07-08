@@ -254,3 +254,6 @@ def main():
             writer.writerow(v)
 
     log.info(f"report_{time}.csv generated successfully")
+
+   
+main()

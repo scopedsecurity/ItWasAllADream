@@ -101,7 +101,7 @@ def check(vector, username, password, domain, address, port, timeout, share="\\\
             except Exception as e:
                 log.debug(e)
                 # Spooler Service attempted to grab the DLL, host is vulnerable
-                if str(e).find("ERROR_BAD_NETPATH") != -1 or str(e).find("ERROR_NETNAME_DELETED") != -1:
+                if str(e).find("ERROR_BAD_NETPATH") != -1 or str(e).find("ERROR_NETNAME_DELETED") != -1 or str(e).find("ERROR_PATH_NOT_FOUND") != -1 or str(e).find("ERROR_INVALID_HANDLE") != -1:
                     log.info(f"{address} is vulnerable over {vector.PROTOCOL}. Reason: Host attempted to grab DLL from supplied share")
                     results["vulnerable"] = True
                     results["reason"] = "Host attempted to grab DLL from supplied share"

@@ -73,7 +73,7 @@ def check(vector, username, password, domain, address, port, timeout, share="\\\
 
     else:
         #local_ip = dce.get_rpc_transport().get_socket().getsockname()[0]
-        local_ip = 240.0.0.1
+        local_ip = '240.0.0.1'
         share = share.format(local_ip)
         #share = f"\\\\192.168.3.1\\itwasalladream\\bogus.dll"
 
